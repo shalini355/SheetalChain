@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SheetalChain Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Shared Cold Storage Monitoring</p>
+          <h1>SheetalChain</h1>
+        </div>
+        <div class="role-picker">
+          <button class="role-btn active" data-role="MANAGER">Manager</button>
+          <button class="role-btn" data-role="FARMER" data-farmer="FARMER-101">Farmer</button>
+        </div>
+      </header>
+
+      <section class="summary-grid">
+        <div class="stat-card ok">
+          <span class="label">Units</span>
+          <strong id="unit-count">0</strong>
+        </div>
+        <div class="stat-card warning">
+          <span class="label">At Risk</span>
+          <strong id="risk-count">0</strong>
+        </div>
+        <div class="stat-card danger">
+          <span class="label">Alerts</span>
+          <strong id="alert-count">—</strong>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Live Facility Units</h2>
+            <span class="live-status"><span class="live-dot"></span>Live telemetry</span>
+          </div>
+          <div id="unit-list" class="unit-list">
+            <div class="skeleton unit-skeleton"></div>
+            <div class="skeleton unit-skeleton"></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Alert Feed</h2>
+            <span id="alert-count-label" class="panel-kicker">Monitoring</span>
+          </div>
+          <div id="alert-feed" class="alert-feed">
+            <div class="skeleton alert-skeleton"></div>
+            <div class="skeleton alert-skeleton"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
